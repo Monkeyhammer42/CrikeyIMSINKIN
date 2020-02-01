@@ -25,6 +25,9 @@ public class CrikeyManager : MonoBehaviour
 
     void Start()
     {
+        HolesList = new List<Hole>();
+        InactiveHoles = new List<Hole>();
+        ActiveHoles = new List<Hole>();
         for (int i = 0; i < Holes.Length; i++)
         {
             Hole h = new Hole();
@@ -34,13 +37,28 @@ public class CrikeyManager : MonoBehaviour
             h.Position = Holes[i].transform.position;
             HolesList.Add(h);
         }
+        for (int i = 0; i < HolesList.Count; i++)
+        {
+            InactiveHoles.Add(HolesList[i]);
+        }
     }
 
     void Update()
     {
-        if(CurrentActiveHoles <MaxActiveHoles)
+        if(MaxActiveHoles > -1 && CurrentActiveHoles < MaxActiveHoles)
         {
+            if (InactiveHoles.Count > -1)
+            {
+                int inactiveHoles = InactiveHoles.Count;
+                int holeOn = Random.Range(0, inactiveHoles);
+                Hole h = InactiveHoles[holeOn];
+                h.HoleObject.SetActive(true);
+                h.Pluggable = true;
+                InactiveHoles.Remove(h);
+                ActiveHoles.Add(h);
+                CurrentActiveHoles++;
 
+            }
         }
     }
 }

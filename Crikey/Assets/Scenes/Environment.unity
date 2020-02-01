@@ -5444,13 +5444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766056e1d1a58554abdc36b7381e20ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  directionalLight: {fileID: 170076734}
-  spotLights:
-  - {fileID: 679142533}
-  - {fileID: 1840166645}
-  pointLight: {fileID: 1823037828}
-  hideGUI: 0
 --- !u!1 &961964134
 GameObject:
   m_ObjectHideFlags: 0
@@ -10794,7 +10787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767598767}
   m_LocalRotation: {x: -0, y: -0.096755944, z: -0, w: 0.9953082}
-  m_LocalPosition: {x: 2.25, y: 1.3728552, z: -7.9800005}
+  m_LocalPosition: {x: 0.01, y: 1.3728552, z: -4.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 82276042}
@@ -11096,6 +11089,8 @@ MonoBehaviour:
   - {fileID: 411096754}
   - {fileID: 1485111123}
   - {fileID: 618790428}
+  MaxActiveHoles: -1
+  CurrentActiveHoles: -1
 --- !u!1 &2085271370
 GameObject:
   m_ObjectHideFlags: 0
