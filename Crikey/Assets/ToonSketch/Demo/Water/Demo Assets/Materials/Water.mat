@@ -133,7 +133,7 @@ Material:
     - _TCP2_STYLIZED_FRESNEL: 0
     - _UVSec: 0
     - _VertexData: 0
-    - _WaterDepthCutoff: 1
+    - _WaterDepthCutoff: 0.27
     - _WaveAmount: 0.5
     - _WaveSpeed: 0.5
     - _WaveStrength: 0.1
