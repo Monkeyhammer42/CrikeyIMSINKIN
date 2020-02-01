@@ -17,14 +17,14 @@ public class CrikeyManager : MonoBehaviour
     private List<Hole> HolesList;
     private List<Hole> InactiveHoles;
     private List<Hole> ActiveHoles;
-
+    private List<GameObject> Corks;
     private int Level; // scale of difficulty;
     private float TotalSurvivalTime; // total time in game surviving - use to scale difficulty;
 
     public float MaxActiveHoles; //current max number of active holes;
     public float CurrentActiveHoles; //current number of holes with water; 
     public bool PlayerAlive;
-
+    public float PluggableDistance;
     private static CrikeyManager _instance;
 
     public static CrikeyManager Instance
@@ -86,5 +86,30 @@ public class CrikeyManager : MonoBehaviour
         }
     }
 
+   public void CheckDistanceToHole(GameObject cork)
+    {
+      
+        float currentClosestDist = 100;
+        Vector3 corkPosition = cork.transform.position;
+        Hole closest = null;
+        for (int i = 0; i < ActiveHoles.Count; i++)
+        {
+            float dist = Vector3.Distance(corkPosition, ActiveHoles[i].Position); ;
+            if (dist < currentClosestDist)
+            {
+                currentClosestDist = dist;
+                closest = ActiveHoles[i];
+            }
+        }
+        if (currentClosestDist < PluggableDistance)
+        {
+            cork.transform.position = closest.Position;
+        }
+        ActiveHoles.Remove(closest);
+        InactiveHoles.Add(closest);
+        //cork.GetComponent<Corkscript>().AttatchedToHat = true;
+    }
 
+
+    
 }

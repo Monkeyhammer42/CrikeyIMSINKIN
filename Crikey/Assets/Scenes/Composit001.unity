@@ -16727,6 +16727,7 @@ MonoBehaviour:
   MaxActiveHoles: -1
   CurrentActiveHoles: -1
   PlayerAlive: 0
+  PluggableDistance: 0.5
 --- !u!1 &2068005508
 GameObject:
   m_ObjectHideFlags: 0
