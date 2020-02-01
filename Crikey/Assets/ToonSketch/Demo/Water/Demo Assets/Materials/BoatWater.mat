@@ -78,7 +78,7 @@ Material:
     - _FoamSoftness: 1
     - _FoamSpeed: 0.408
     - _FoamStrength: 1
-    - _FoamTiling: 1
+    - _FoamTiling: 10
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -94,15 +94,15 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 5
     - _Style: 0
-    - _SurfaceDistort: 0
-    - _SurfaceSpeed: 0
-    - _SurfaceStrength: 0
-    - _SurfaceTiling: 1
+    - _SurfaceDistort: 1
+    - _SurfaceSpeed: 1
+    - _SurfaceStrength: 0.041
+    - _SurfaceTiling: 10
     - _SurfaceUseWorld: 0
     - _UVSec: 0
     - _VertexData: 0
-    - _WaterDepthCutoff: 4.92
-    - _WaveAmount: 0
+    - _WaterDepthCutoff: 0
+    - _WaveAmount: 0.491
     - _WaveSpeed: 0
     - _WaveStrength: 0
     - _WaveUseWorld: 0
