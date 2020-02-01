@@ -20,11 +20,35 @@ public class CrikeyManager : MonoBehaviour
 
     private int Level; // scale of difficulty;
     private float TotalSurvivalTime; // total time in game surviving - use to scale difficulty;
+
     public float MaxActiveHoles; //current max number of active holes;
     public float CurrentActiveHoles; //current number of holes with water; 
+    public bool PlayerAlive;
+
+    private static CrikeyManager _instance;
+
+    public static CrikeyManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<CrikeyManager>();
+            }
+
+            return _instance;
+        }
+    }
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
 
     void Start()
     {
+        PlayerAlive = true; 
         HolesList = new List<Hole>();
         InactiveHoles = new List<Hole>();
         ActiveHoles = new List<Hole>();
@@ -61,4 +85,6 @@ public class CrikeyManager : MonoBehaviour
             }
         }
     }
+
+
 }
